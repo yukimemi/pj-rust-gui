@@ -1,0 +1,21 @@
+name = "pj-rust-gui"
+version = "0.1.0"
+
+[[file]]
+src = "AGENTS.md.rust-gui"
+dst = "AGENTS.md"
+how = "merge-section"
+when = "always"
+marker = { begin = "<!-- kata:agents:rust-gui:begin -->", end = "<!-- kata:agents:rust-gui:end -->" }
+
+[[file]]
+src = ".github/workflows/gui-release.yml.template"
+dst = ".github/workflows/gui-release.yml"
+how = "overwrite"
+when = "always"
+
+[[file]]
+src = "renovate.json"
+how = "merge-json"
+when = "always"
+paths = ["extends"]

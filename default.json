@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>yukimemi/pj-rust"],
+  "packageRules": [
+    {
+      "description": "Bump the desktop workflow's action pins in pj-rust-gui, not in the generated consumer workflow.",
+      "matchManagers": ["github-actions"],
+      "matchFileNames": [".github/workflows/gui-release.yml"],
+      "enabled": false
+    }
+  ]
+}

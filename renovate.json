@@ -1,0 +1,3 @@
+{
+  "extends": ["github>yukimemi/pj-rust-gui"]
+}

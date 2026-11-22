@@ -1,0 +1,6 @@
+# Rust desktop GUI
+
+- Use `cargo make check` for source checks. Also run the actual desktop binary and exercise changed behavior with real window input on the affected platform. Compilation and `--help` do not validate a GUI.
+- The desktop release workflow builds Windows MSVC, Apple Silicon macOS, and glibc Linux archives. Do not switch the Linux target to static musl for applications that load OpenGL or window-system libraries at runtime.
+- Keep the application icon assets and resource build project-owned. For eframe, a PNG can be embedded in the viewport; on Windows, embed a multi-size ICO in the executable if Explorer should display it. Verify both against the built app.
+- Release archives contain the Cargo binary, not platform installers. Set the repository variable `RUST_GUI_BIN_NAME` if the executable name differs from the repository name. Crates.io publishing is disabled unless `RUST_GUI_PUBLISH` is set to `true` and `CARGO_REGISTRY_TOKEN` is configured.
